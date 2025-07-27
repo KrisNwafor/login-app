@@ -9,7 +9,7 @@ describe('Login and CRUD Flow (Single Test Flow)', () => {
     cy.get('input[name="password"]').type('password123');
     cy.get('button[type="submit"]').click();
 
-    // ✅ Wait for navigation or content
+    // Wait for navigation or content
     cy.contains('Add');
 
     // Create

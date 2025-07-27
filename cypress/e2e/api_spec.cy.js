@@ -1,6 +1,6 @@
 describe('API Test - CRUD', () => {
   const apiUrl = 'http://localhost:5000/api/items';
-  const newItem = { name: 'QA Tester', email: 'qa@example.com' };
+  const newItem = { name: 'Chris', email: 'christophernwafor@gmial.com' };
 
   it('should create a new item', () => {
     cy.request('POST', apiUrl, newItem)
@@ -19,10 +19,10 @@ describe('API Test - CRUD', () => {
       const id = res.body._id;
 
       cy.request('PUT', `${apiUrl}/${id}`, {
-        name: 'Updated QA',
-        email: 'updated@example.com',
+        name: 'Chris New',
+        email: 'updated@email.com',
       }).its('body')
-        .should('include', { name: 'Updated QA', email: 'updated@example.com' });
+        .should('include', { name: 'Chris New', email: 'updated@email.com' });
     });
   });
 

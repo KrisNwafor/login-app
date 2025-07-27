@@ -7,8 +7,8 @@ A basic login and CRUD interface built with React + Node, tested using Cypress f
 
 #### 1. Clone the repo
 ```bash
-git clone https://github.com/yourname/qa-test-app.git
-cd qa-test-app
+git clone https://github.com/KrisNwafor/login-app.git
+cd login-app
 ```
 
 #### 2. Install dependencies

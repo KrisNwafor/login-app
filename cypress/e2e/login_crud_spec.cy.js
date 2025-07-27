@@ -7,7 +7,7 @@ describe('Login and CRUD Flow (Single Test Flow)', () => {
     cy.get('input[name="password"]').type('password123');
     cy.get('button[type="submit"]').click();
 
-    // ✅ Wait for navigation or content
+    // Wait for navigation or content
     cy.contains('Add');
 
     // Create
@@ -23,14 +23,14 @@ describe('Login and CRUD Flow (Single Test Flow)', () => {
     // Edit
     cy.window().then((win) => {
       cy.stub(win, 'prompt')
-        .onFirstCall().returns('Chris Updated')
-        .onSecondCall().returns('qa_updated@example.com');
+        .onFirstCall().returns('Chris New')
+        .onSecondCall().returns('newd@example.com');
     });
     cy.contains('Edit').click();
-    cy.contains('Chris Updated');
+    cy.contains('Chris New');
 
     //Delete
     cy.contains('Delete').click();
-    cy.contains('Chris Updated').should('not.exist');
+    cy.contains('Chris New').should('not.exist');
   });
 });
